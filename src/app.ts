@@ -22,6 +22,5 @@ app.get('/', (_req: express.Request, res: express.Response) =>
 app.use('/api', api)
 
 app.use(middlewares.notFound)
-app.use(middlewares.errorHandler)
 
 export default app

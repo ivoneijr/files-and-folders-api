@@ -15,7 +15,9 @@ app.use(helmet())
 app.use(cors())
 app.use(express.json())
 
-app.get('/', (_req, res) => res.json({ status: 'up' }))
+app.get('/', (_req: express.Request, res: express.Response) =>
+  res.json({ status: 'up' })
+)
 
 app.use('/api', api)
 

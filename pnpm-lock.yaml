@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@prisma/client':
+    specifier: ^5.3.1
+    version: 5.3.1
+  bcryptjs:
+    specifier: ^2.4.3
+    version: 2.4.3
   cors:
     specifier: ^2.8.5
     version: 2.8.5
@@ -20,8 +26,14 @@ dependencies:
   morgan:
     specifier: ^1.10.0
     version: 1.10.0
+  zod:
+    specifier: ^3.22.2
+    version: 3.22.2
 
 devDependencies:
+  '@types/bcryptjs':
+    specifier: ^2.4.4
+    version: 2.4.4
   '@types/cors':
     specifier: ^2.8.14
     version: 2.8.14
@@ -773,6 +785,23 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@prisma/client@5.3.1:
+    resolution: {integrity: sha512-ArOKjHwdFZIe1cGU56oIfy7wRuTn0FfZjGuU/AjgEBOQh+4rDkB6nF+AGHP8KaVpkBIiHGPQh3IpwQ3xDMdO0Q==}
+    engines: {node: '>=16.13'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 5.3.1-2.61e140623197a131c2a6189271ffee05a7aa9a59
+    dev: false
+
+  /@prisma/engines-version@5.3.1-2.61e140623197a131c2a6189271ffee05a7aa9a59:
+    resolution: {integrity: sha512-y5qbUi3ql2Xg7XraqcXEdMHh0MocBfnBzDn5GbV1xk23S3Mq8MGs+VjacTNiBh3dtEdUERCrUUG7Z3QaJ+h79w==}
+    dev: false
+
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
@@ -832,6 +861,10 @@ packages:
     resolution: {integrity: sha512-ojlGK1Hsfce93J0+kn3H5R73elidKUaZonirN33GSmgTUMpzI/MIFfSpF3haANe3G1bEBS9/9/QEqwTzwqFsKw==}
     dependencies:
       '@babel/types': 7.23.0
+    dev: true
+
+  /@types/bcryptjs@2.4.4:
+    resolution: {integrity: sha512-9wlJI7k5gRyJEC4yrV7DubzNQFTPiykYxUA6lBtsk5NlOfW9oWLJ1HdIA4YtE+6C3i3mTpDQQEosJ2rVZfBWnw==}
     dev: true
 
   /@types/body-parser@1.19.3:
@@ -1377,6 +1410,10 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       safe-buffer: 5.1.2
+    dev: false
+
+  /bcryptjs@2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
     dev: false
 
   /binary-extensions@2.2.0:
@@ -4516,3 +4553,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.2:
+    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
+    dev: false

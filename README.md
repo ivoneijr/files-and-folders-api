@@ -1,5 +1,7 @@
 # files-and-folders-api
 
+This repository houses the backend development of a web application focusing on the implementation and understanding of RESTful APIs. Through this project, students have the opportunity to apply the principles and patterns of REST learned in lectures, setting a foundation for a forthcoming frontend integration.
+
 ## Includes API Server utilities
 
 | Name                                           | Description                                                                                                                |

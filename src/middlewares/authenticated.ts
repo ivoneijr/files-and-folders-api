@@ -10,6 +10,7 @@ export const authenticated = async (
 ) => {
   try {
     const header = req.headers.authorization
+
     if (!header) {
       next(new CustomError(401, 'Unauthorized'))
     }

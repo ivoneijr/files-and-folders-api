@@ -8,6 +8,8 @@ export const authenticated = async (
   res: Response,
   next: NextFunction
 ) => {
+  if (process.env.AUTH === 'false') return next()
+
   try {
     const header = req.headers.authorization
 

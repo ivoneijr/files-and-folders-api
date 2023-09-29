@@ -19,6 +19,27 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  folders   Folder[]
 
   @@map("users")
+}
+
+model Folder {
+  id String @id @default(cuid())
+
+  title String
+
+  userId   String?
+  parentId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User?    @relation(fields: [userId], references: [id])
+  parent    Folder?  @relation("childFolders", fields: [parentId], references: [id], onDelete: Cascade)
+  childrens Folder[] @relation("childFolders")
+
+  @@index([parentId], name: "idx_folder_parent_id")
+  @@index([userId], name: "idx_folder_user_id")
+  @@map("folders")
 }

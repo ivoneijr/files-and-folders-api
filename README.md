@@ -1,4 +1,4 @@
-# files-and-folders-ap
+# files-and-folders-api
 
 Includes API Server utilities:
 
@@ -27,27 +27,28 @@ Development utilities:
   - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 - [supertest](https://www.npmjs.com/package/supertest)
   - HTTP assertions made easy via superagent.
+- [prisma](https://github.com/prisma)
+  - DB ORM
+- [bcryptjs](https://github.com/prisma)
+  - password hash and check
+- [jsonwebtoken](https://github.com/prisma)
+  - Auth manage
+- [zod](https://github.com/prisma)
+  - Schema validation
 
-## Setup
+## Running locally instructions
 
 ```sh
 pnpm i
+pnpm db:migrate:dev
+pnpm  dev
 ```
 
-## Lint
-
-```sh
-pnpm lint
-```
-
-## Test
+## Useful commands
 
 ```sh
 pnpm test
-```
-
-## Development
-
-```sh
-pnpm  dev
+pnpm build
+pnpm start
+db:migrate:draft
 ```

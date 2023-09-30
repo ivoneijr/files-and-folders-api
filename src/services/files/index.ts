@@ -24,6 +24,7 @@ const show = async (id: string) => {
 }
 
 const create = async (data: CreateFilePayload) => {
+  console.log('data: ', data)
   const idsExists = await userAndFolderExists(data.createdById, data.folderId)
   if (!idsExists) {
     throw new CustomError(400, 'Invalid userId or folderId')

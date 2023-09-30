@@ -28,7 +28,6 @@ model Folder {
   id String @id @default(cuid())
 
   title String
-  path  String?
 
   userId   String?
   parentId String?
@@ -56,6 +55,7 @@ model File {
 
   type  FileTypeEnum
   title String
+  path  String?
 
   createdById String
   folderId    String?

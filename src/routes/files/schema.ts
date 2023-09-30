@@ -9,6 +9,7 @@ export const createFileSchema = z.object({
   }),
   createdById: z.string(),
   folderId: z.string(),
+  path: z.string().optional(),
 })
 
 export type CreateFilePayload = z.infer<typeof createFileSchema>

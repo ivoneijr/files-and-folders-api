@@ -1,11 +1,14 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
+import controller from '../../controllers/files'
+import { authenticated } from '../../middlewares/authenticated'
+import { validate } from '../../middlewares/validate'
+import { createFileSchema } from './schema'
 
 const router = express.Router()
 
-router.get('/', (_req: Request, res: Response) => {
-  res.json({
-    message: 'FILES',
-  })
-})
+router.get('/', authenticated, controller.list)
+router.post('/', authenticated, validate(createFileSchema), controller.create)
+router.get('/:id', authenticated, controller.show)
+router.delete('/:id', authenticated, controller.exclude)
 
 export default router

@@ -28,6 +28,7 @@ model Folder {
   id String @id @default(cuid())
 
   title String
+  path  String?
 
   userId   String?
   parentId String?
@@ -38,8 +39,32 @@ model Folder {
   user      User?    @relation(fields: [userId], references: [id])
   parent    Folder?  @relation("childFolders", fields: [parentId], references: [id], onDelete: Cascade)
   childrens Folder[] @relation("childFolders")
+  files     File[]
 
   @@index([parentId], name: "idx_folder_parent_id")
   @@index([userId], name: "idx_folder_user_id")
   @@map("folders")
+}
+
+enum FileTypeEnum {
+  NONE
+  PLAIN_TEXT
+}
+
+model File {
+  id String @id @default(cuid())
+
+  type  FileTypeEnum
+  title String
+
+  createdById String
+  folderId    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  folder Folder? @relation(fields: [folderId], references: [id])
+
+  @@index([createdById], name: "idx_file_created_by_id")
+  @@map("files")
 }

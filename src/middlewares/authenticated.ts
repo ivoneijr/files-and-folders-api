@@ -8,8 +8,11 @@ export const authenticated = async (
   res: Response,
   next: NextFunction
 ) => {
+  if (process.env.AUTH === 'false') return next()
+
   try {
     const header = req.headers.authorization
+
     if (!header) {
       next(new CustomError(401, 'Unauthorized'))
     }

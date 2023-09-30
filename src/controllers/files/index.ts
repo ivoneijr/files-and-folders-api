@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express'
 import filesService from '../../services/files'
 import CustomError from '../../utils/CustomError'
 import { DEFAULT_STORAGE, supabase } from '../../utils/supabase'
-import { getFolderAndUser } from './utils'
+import { extractPath, getFolderAndUser } from './utils'
 
 const list = async (_req: Request, res: Response, next: NextFunction) => {
   try {
@@ -60,13 +60,10 @@ const upload = async (req: Request, res: Response, next: NextFunction) => {
 
     const file = req.file
 
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = date.getMonth()
-    const day = date.getDate()
-    const timestamp = date.getTime()
-
-    const filePath = `${year}/${month}/${day}/${user.email}/${timestamp}_${file.originalname}`
+    const { fileName, filePath } = await extractPath(
+      file.originalname,
+      user.email
+    )
 
     const { error, data } = await supabase.storage
       .from(DEFAULT_STORAGE)
@@ -80,7 +77,7 @@ const upload = async (req: Request, res: Response, next: NextFunction) => {
 
     const createdFile = await filesService.create({
       type: FileTypeEnum.NONE,
-      title: filePath,
+      title: fileName,
       folderId: folder.id,
       createdById: user.id,
       path: data.path,

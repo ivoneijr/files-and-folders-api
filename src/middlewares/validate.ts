@@ -12,7 +12,7 @@ export const check = async <T>(body: any, schema: ZodType<T, any, any>) => {
 }
 
 export const validate = <T>(schema: ZodType<T, any, any>) => {
-  return async (req: Request, res: Response, next: NextFunction) => {
+  return async (req: Request, _res: Response, next: NextFunction) => {
     try {
       req.body = await check(req.body, schema)
       next()

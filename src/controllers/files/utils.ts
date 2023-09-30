@@ -23,3 +23,16 @@ export const getFolderAndUser = async ({
 
   return { folder, user }
 }
+
+export const extractPath = async (originalName: string, email: string) => {
+  const date = new Date()
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const day = date.getDate()
+  const timestamp = date.getTime()
+
+  const fileName = `${timestamp}_${originalName}`
+  const filePath = `${year}/${month}/${day}/${email}/${fileName}`
+
+  return { fileName, filePath }
+}

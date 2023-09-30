@@ -151,14 +151,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{HOST}}/api/users/cln41hldh0000veluks6027sd",
+									"raw": "{{HOST}}/api/users/cln48mfg70000ve8xfpc13m94",
 									"host": [
 										"{{HOST}}"
 									],
 									"path": [
 										"api",
 										"users",
-										"cln41hldh0000veluks6027sd"
+										"cln48mfg70000ve8xfpc13m94"
 									]
 								}
 							},
@@ -170,18 +170,8 @@
 					"name": "/files",
 					"item": [
 						{
-							"name": "list",
+							"name": "List",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsbjQ4bWZnNzAwMDB2ZTh4ZnBjMTNtOTQiLCJpYXQiOjE2OTU5NzEwNDQsImV4cCI6MTY5NTk3MTA2NCwic3ViIjoiY2xuNDhtZmc3MDAwMHZlOHhmcGMxM205NCJ9.o0bsFCsUegyN-sOSYDojHXIBmg6PYJG-JhxZ6ABJlbY",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -196,6 +186,110 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/files/cln59bh2d0000ve5498emv6s4",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"cln59bh2d0000ve5498emv6s4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"NONE\",\n    \"title\": \"myfile\",\n    \"createdById\": \"cln48mfg70000ve8xfpc13m94\",\n    \"folderId\" : \"cln5dbasg0004veshw4t6qwz5\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/files",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/files/cln5dbfry0006veshpalfy2z3",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"cln5dbfry0006veshpalfy2z3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/ivoneijunior/Desktop/Screen Shot 2023-09-29 at 18.32.24.png"
+										},
+										{
+											"key": "folderId",
+											"value": "cln5fk9cf0000veip3mnez4ka",
+											"type": "text"
+										},
+										{
+											"key": "createdById",
+											"value": "cln5fkq0z0001veiptuav3wii",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{HOST}}/api/files/upload",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"upload"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -203,18 +297,8 @@
 					"name": "/folders",
 					"item": [
 						{
-							"name": "list",
+							"name": "List",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNsbjQ4bWZnNzAwMDB2ZTh4ZnBjMTNtOTQiLCJpYXQiOjE2OTU5NzEwNDQsImV4cCI6MTY5NTk3MTA2NCwic3ViIjoiY2xuNDhtZmc3MDAwMHZlOHhmcGMxM205NCJ9.o0bsFCsUegyN-sOSYDojHXIBmg6PYJG-JhxZ6ABJlbY",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -225,6 +309,71 @@
 									"path": [
 										"api",
 										"folders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/folders/cln59bh2d0000ve5498emv6s4",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"folders",
+										"cln59bh2d0000ve5498emv6s4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"src\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/folders",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"folders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/folders/cln5dbasg0004veshw4t6qwz5",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"folders",
+										"cln5dbasg0004veshw4t6qwz5"
 									]
 								}
 							},

@@ -13,6 +13,11 @@ const show = async (id: string) => {
     where: {
       id,
     },
+    include: {
+      files: true,
+      childrens: true,
+      parent: true,
+    },
   })
 
   if (!folder) {

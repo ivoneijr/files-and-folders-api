@@ -17,7 +17,13 @@ const show = async (id: string) => {
     where: {
       id,
     },
-    select: DEFAULT_FIELDS,
+    include: {
+      folders: {
+        include: {
+          files: true,
+        },
+      },
+    },
   })
 
   if (!user) {
